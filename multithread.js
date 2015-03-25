@@ -10,7 +10,7 @@
 	}
 
 	function Multithread(threads) {
-		this.threads = Math.max(2, threads | 0);
+		this.threads = Math.max(2, threads | 0, navigator.hardwareConcurrency | 0);
 		this._queue = [];
 		this._queueSize = 0;
 		this._activeThreads = 0;
